@@ -38,6 +38,12 @@ class Path {
     this.drawPath = drawPath;
   }
 
+  /**
+   * @description Function that calculates the air time, the maximum height
+   *  reached by the projectile and the maximun horizontal displacement
+   *
+   * @memberof Path
+   */
   calculateInfo() {
     this.airTime = Math.floor(1000 * 2 * this.initialVelocity *
       Math.sin(this.launchAngle * Math.PI / 180) / GRAVITY_FORCE) / 1000;
@@ -46,6 +52,22 @@ class Path {
     this.maxYCoord = Math.floor(1000 * Math.pow(this.initialVelocity, 2) *
       Math.pow(Math.sin(this.launchAngle * Math.PI / 180), 2) /
       (2 * GRAVITY_FORCE)) / 1000;
+  }
+
+  /**
+   * @description Function that prints the projectile info at the given canvas
+   *
+   * @param {*} CONTEXT - Canvas context
+   * @param {*} CANVAS - Canvas
+   * @memberof Path
+   */
+  printInfo(CONTEXT, CANVAS) {
+    CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
+    CONTEXT.fillStyle = 'black'
+    CONTEXT.font = "30px Arial";
+    CONTEXT.fillText("Tiempo en el aire: " + this.airTime, 20, 50);
+    CONTEXT.fillText("Distancia horizontal: " + this.maxXCoord, 20, 100);
+    CONTEXT.fillText("Altura máxima: " + this.maxYCoord, 20, 150);
   }
 }
 
