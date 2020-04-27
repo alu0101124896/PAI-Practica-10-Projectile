@@ -33,8 +33,12 @@ describe('Path Class', () => {
       expectOnPathTest(MY_PATH.iniYCoord).to.be.a('number');
     });
 
-    it('Default xCoord is 0', () => {
+    it('Default iniXCoord is 0', () => {
       expectOnPathTest(MY_PATH.iniXCoord).to.be.equal(0);
+    });
+
+    it('Default iniYCoord is 0', () => {
+      expectOnPathTest(MY_PATH.iniYCoord).to.be.equal(0);
     });
   });
 });
