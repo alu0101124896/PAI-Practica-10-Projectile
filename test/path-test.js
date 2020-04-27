@@ -41,4 +41,12 @@ describe('Path Class', () => {
       expectOnPathTest(MY_PATH.iniYCoord).to.be.equal(0);
     });
   });
+
+  describe('Non default property values', () => {
+    const MY_PATH = new PathOnPathTest(5, 10);
+
+    it('Modifies default iniXCoord correctly', () => {
+      expectOnPathTest(MY_PATH.iniXCoord).to.be.equal(5);
+    });
+  });
 });
