@@ -43,6 +43,11 @@ describe('Path Class', () => {
       expectOnPathTest(MY_PATH.launchAngle).to.be.a('number');
     });
 
+    it('Path has a drawPath', () => {
+      expectOnPathTest(MY_PATH).to.have.property('drawPath');
+      expectOnPathTest(MY_PATH.drawPath).to.be.a('boolean');
+    });
+
     it('Default inicialXCoord is 0', () => {
       expectOnPathTest(MY_PATH.inicialXCoord).to.be.equal(0);
     });
