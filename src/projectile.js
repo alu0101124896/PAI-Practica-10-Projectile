@@ -38,11 +38,11 @@ function mainBrowser() {
     const CONTEXT1 = CANVAS1.getContext("2d");
     const CONTEXT2 = CANVAS1.getContext("2d");
 
-    CANVAS1.width = window.innerWidth-50;
-    CANVAS1.height = (window.innerHeight - 200) / 2;
+    CANVAS1.width = window.innerWidth - 50;
+    CANVAS1.height = (window.innerHeight - 200) * 2 / 3;
 
     CANVAS2.width = (window.innerWidth - 100) / 2;
-    CANVAS2.height = (window.innerHeight - 200) / 2;
+    CANVAS2.height = (window.innerHeight - 200) / 3;
   }
 }
 

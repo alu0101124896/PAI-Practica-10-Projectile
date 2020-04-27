@@ -28,10 +28,24 @@
       <canvas id="canvas2" style="border:3px solid black;"></canvas>
     </div>
     <div class="item3">
-      <label for="inicialVelocity">Velocidad inicial: </label>
-      <input type="number" value="20" id="inicialVelocity"><br/>
-      <label for="launchAngle">Ángulo del lanzamiento: </label>
-      <input type="number" value="60" id="launchAngle">
+      <div>
+        <label for="inicialVelocity">Velocidad inicial: </label>
+        <input type="number" id="inicialVelocity" name="inicialVelocity" value="20">
+      </div>
+      <br/>
+      <div>
+        <label for="launchAngle">Ángulo del lanzamiento: </label>
+        <input type="number" id="launchAngle" name="launchAngle" value="60">
+      </div>
+      <br/>
+      <div>
+        <label for="drawPath">Dibujar trayectoria: </label>
+        <input type="checkbox" id="drawPath" name="drawPath" checked>
+      </div>
+      <br/>
+      <div>
+        <button type="submit">Lanzar</button>
+      </div>
     </div>
   </div>
   <!-- <script src="../src/point.js"></script> -->

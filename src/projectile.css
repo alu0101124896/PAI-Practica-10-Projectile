@@ -42,18 +42,18 @@ canvas {
 }
 .item1 {
   grid-area: a;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
 }
 .item2 {
   grid-area: b;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
 }
 .item3 {
   grid-area: c;
   margin: auto;
-  text-align: center;
+  text-align: left;
 }
 
 a {
