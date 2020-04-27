@@ -22,10 +22,12 @@ class Path {
    *
    * @memberof Path
    */
-  constructor(iniXCoord = 0, iniYCoord = 0, iniVelocity = 20) {
-    this.iniXCoord = iniXCoord;
-    this.iniYCoord = iniYCoord;
-    this.iniVelocity = iniVelocity;
+  constructor(inicialXCoord = 0, inicialYCoord = 0, inicialVelocity = 20,
+    launchAngle = 60) {
+    this.inicialXCoord = inicialXCoord;
+    this.inicialYCoord = inicialYCoord;
+    this.inicialVelocity = inicialVelocity;
+    this.launchAngle = launchAngle;
   }
 }
 
