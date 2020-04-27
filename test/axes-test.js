@@ -21,11 +21,16 @@ if (typeof require !== 'undefined') { // Execution in node
 
 describe('Axes Class', () => {
   describe('Default properties', () => {
-    const MY_AXES = new AxesOnAxesTest(10);
+    const MY_AXES = new AxesOnAxesTest(10, 50);
 
     it('Axes has an xCoord', () => {
       expectOnAxesTest(MY_AXES).to.have.property('xCoord');
       expectOnAxesTest(MY_AXES.xCoord).to.be.a('number');
+    });
+
+    it('Axes has an yCoord', () => {
+      expectOnAxesTest(MY_AXES).to.have.property('yCoord');
+      expectOnAxesTest(MY_AXES.yCoord).to.be.a('number');
     });
   });
 });
