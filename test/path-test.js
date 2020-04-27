@@ -23,19 +23,19 @@ describe('Path Class', () => {
   describe('Default properties', () => {
     const MY_PATH = new PathOnPathTest();
 
-    it('Path has an inicialXCoord', () => {
-      expectOnPathTest(MY_PATH).to.have.property('inicialXCoord');
-      expectOnPathTest(MY_PATH.inicialXCoord).to.be.a('number');
+    it('Path has an initialXCoord', () => {
+      expectOnPathTest(MY_PATH).to.have.property('initialXCoord');
+      expectOnPathTest(MY_PATH.initialXCoord).to.be.a('number');
     });
 
-    it('Path has an inicialYCoord', () => {
-      expectOnPathTest(MY_PATH).to.have.property('inicialYCoord');
-      expectOnPathTest(MY_PATH.inicialYCoord).to.be.a('number');
+    it('Path has an initialYCoord', () => {
+      expectOnPathTest(MY_PATH).to.have.property('initialYCoord');
+      expectOnPathTest(MY_PATH.initialYCoord).to.be.a('number');
     });
 
-    it('Path has an inicialVelocity', () => {
-      expectOnPathTest(MY_PATH).to.have.property('inicialVelocity');
-      expectOnPathTest(MY_PATH.inicialVelocity).to.be.a('number');
+    it('Path has an initialVelocity', () => {
+      expectOnPathTest(MY_PATH).to.have.property('initialVelocity');
+      expectOnPathTest(MY_PATH.initialVelocity).to.be.a('number');
     });
 
     it('Path has a launchAngle', () => {
@@ -48,16 +48,16 @@ describe('Path Class', () => {
       expectOnPathTest(MY_PATH.drawPath).to.be.a('boolean');
     });
 
-    it('Default inicialXCoord is 0', () => {
-      expectOnPathTest(MY_PATH.inicialXCoord).to.be.equal(0);
+    it('Default initialXCoord is 0', () => {
+      expectOnPathTest(MY_PATH.initialXCoord).to.be.equal(0);
     });
 
-    it('Default inicialYCoord is 0', () => {
-      expectOnPathTest(MY_PATH.inicialYCoord).to.be.equal(0);
+    it('Default initialYCoord is 0', () => {
+      expectOnPathTest(MY_PATH.initialYCoord).to.be.equal(0);
     });
 
-    it('Default inicialVelocity is 20', () => {
-      expectOnPathTest(MY_PATH.inicialVelocity).to.be.equal(20);
+    it('Default initialVelocity is 20', () => {
+      expectOnPathTest(MY_PATH.initialVelocity).to.be.equal(20);
     });
 
     it('Default launchAngle is 60', () => {
@@ -70,14 +70,26 @@ describe('Path Class', () => {
   });
 
   describe('Non default property values', () => {
-    const MY_PATH = new PathOnPathTest(5, 10);
+    const MY_PATH = new PathOnPathTest(5, 10, 15, 20, false);
 
-    it('Modifies default inicialXCoord correctly', () => {
-      expectOnPathTest(MY_PATH.inicialXCoord).to.be.equal(5);
+    it('Modifies default initialXCoord correctly', () => {
+      expectOnPathTest(MY_PATH.initialXCoord).to.be.equal(5);
     });
 
-    it('Modifies default inicialYCoord correctly', () => {
-      expectOnPathTest(MY_PATH.inicialYCoord).to.be.equal(10);
+    it('Modifies default initialYCoord correctly', () => {
+      expectOnPathTest(MY_PATH.initialYCoord).to.be.equal(10);
+    });
+
+    it('Default initialVelocity is 20', () => {
+      expectOnPathTest(MY_PATH.initialVelocity).to.be.equal(15);
+    });
+
+    it('Default launchAngle is 60', () => {
+      expectOnPathTest(MY_PATH.launchAngle).to.be.equal(20);
+    });
+
+    it('Default drawPath is true', () => {
+      expectOnPathTest(MY_PATH.drawPath).to.be.equal(false);
     });
   });
 
@@ -85,7 +97,10 @@ describe('Path Class', () => {
     const MY_PATH = new PathOnPathTest();
 
     it('Calculates final info correctly', () => {
-      MY_PATH.calulateInfo();
+      MY_PATH.calculateInfo();
+      expectOnPathTest(MY_PATH.airTime).to.be.equal(3.531);
+      expectOnPathTest(MY_PATH.maxXCoord).to.be.equal(35.311);
+      expectOnPathTest(MY_PATH.maxYCoord).to.be.equal(15.29);
     });
   });
 });
