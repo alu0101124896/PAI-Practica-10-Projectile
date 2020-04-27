@@ -36,11 +36,11 @@ class Point {
    * @param {*} CONTEXT - Canvas context
    * @memberof Point
    */
-  draw(CONTEXT) {
+  draw(color, CONTEXT, CANVAS) {
     CONTEXT.beginPath();
-    CONTEXT.fillStyle = GREEN_POINT;
-    CONTEXT.ellipse(this.xCoord, this.yCoord, grid.stepLenght / 2,
-      grid.stepLenght / 2, 0, 0, Math.PI * 2);
+    CONTEXT.fillStyle = color;
+    CONTEXT.ellipse(this.xCoord, this.yCoord, CANVAS.height / 100,
+      CANVAS.height / 100, 0, 0, Math.PI * 2);
     CONTEXT.fill();
   }
 }

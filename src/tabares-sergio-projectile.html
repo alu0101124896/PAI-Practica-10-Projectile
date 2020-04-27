@@ -20,6 +20,7 @@
 <body>
   <h1>Projectile Motion - Tabares Hernández, Sergio</h1>
   <p><a href="../www/index.html">Return to index</a> </p>
+
   <div class="wrapper">
     <div class="item1">
       <canvas id="canvas1" style="border:3px solid black;"></canvas>
@@ -30,24 +31,26 @@
     <div class="item3">
       <div>
         <label for="initialVelocity">Velocidad inicial: </label>
-        <input type="number" id="initialVelocity" name="initialVelocity" value="20">
+        <input type="number" id="initialVelocity" name="initialVelocity" value="100">
       </div>
-      <br/>
+      <br />
       <div>
         <label for="launchAngle">Ángulo del lanzamiento: </label>
         <input type="number" id="launchAngle" name="launchAngle" value="60">
       </div>
-      <br/>
+      <br />
       <div>
         <label for="drawPath">Dibujar trayectoria: </label>
         <input type="checkbox" id="drawPath" name="drawPath" checked>
       </div>
-      <br/>
+      <br />
       <div>
-        <button type="submit">Lanzar</button>
+        <button type="button" onclick="newThrow();">Lanzar</button>
       </div>
     </div>
   </div>
+
+  <script src="../src/point.js"></script>
   <script src="../src/path.js"></script>
   <script src="../src/axes.js"></script>
   <script src="../src/projectile.js"></script>

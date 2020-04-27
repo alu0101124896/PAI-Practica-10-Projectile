@@ -70,15 +70,7 @@ describe('Path Class', () => {
   });
 
   describe('Non default property values', () => {
-    const MY_PATH = new PathOnPathTest(5, 10, 15, 20, false);
-
-    it('Modifies default initialXCoord correctly', () => {
-      expectOnPathTest(MY_PATH.initialXCoord).to.be.equal(5);
-    });
-
-    it('Modifies default initialYCoord correctly', () => {
-      expectOnPathTest(MY_PATH.initialYCoord).to.be.equal(10);
-    });
+    const MY_PATH = new PathOnPathTest(15, 20, false);
 
     it('Default initialVelocity is 20', () => {
       expectOnPathTest(MY_PATH.initialVelocity).to.be.equal(15);

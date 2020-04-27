@@ -34,17 +34,5 @@ describe('Axes Class', () => {
       expectOnAxesTest(MY_AXES.yCoord).to.be.a('number');
       expectOnAxesTest(MY_AXES.yCoord).to.be.equal(50);
     });
-
-    it('Axes has a xLenght', () => {
-      expectOnAxesTest(MY_AXES).to.have.property('xLenght');
-      expectOnAxesTest(MY_AXES.xLenght).to.be.a('number');
-      expectOnAxesTest(MY_AXES.xLenght).to.be.equal(200);
-    });
-
-    it('Axes has a yLenght', () => {
-      expectOnAxesTest(MY_AXES).to.have.property('yLenght');
-      expectOnAxesTest(MY_AXES.yLenght).to.be.a('number');
-      expectOnAxesTest(MY_AXES.yLenght).to.be.equal(100);
-    });
   });
 });
