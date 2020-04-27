@@ -53,4 +53,12 @@ describe('Path Class', () => {
       expectOnPathTest(MY_PATH.iniYCoord).to.be.equal(10);
     });
   });
+
+  describe('Path final info', () => {
+    const MY_PATH = new PathOnPathTest();
+
+    it('Calculates final info correctly', () => {
+      MY_PATH.calulateInfo();
+    });
+  });
 });
