@@ -22,8 +22,9 @@ class Path {
    *
    * @memberof Path
    */
-  constructor(iniXCoord = 0) {
+  constructor(iniXCoord = 0, iniYCoord = 0) {
     this.iniXCoord = iniXCoord;
+    this.iniYCoord = iniYCoord;
   }
 }
 
