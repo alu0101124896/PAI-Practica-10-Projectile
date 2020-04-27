@@ -10,7 +10,17 @@
 
 "use strict";
 
+let PointOnPath;
+if (typeof require !== 'undefined') { // Execution in node
+  PointOnPath = require('./point.js').Point;
+} else { // Execution in browser
+  PointOnPath = Point;
+}
+
 const GRAVITY_FORCE = 9.81;
+const BLACK_INFO = 'black';
+const THIRTY_PX_ARIAL = "30px Arial";
+const TIME_INTERVAL = 0.5;
 
 /**
  * @description Class representing a path
@@ -56,7 +66,7 @@ class Path {
 
   /* istanbul ignore next */
   /**
-   * @description Function that prints the projectile info at the given canvas
+   * @description Function that prints the projectile info in the given canvas
    *
    * @param {*} CONTEXT - Canvas context
    * @param {*} CANVAS - Canvas
@@ -64,11 +74,26 @@ class Path {
    */
   printInfo(CONTEXT, CANVAS) {
     CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
-    CONTEXT.fillStyle = 'black'
-    CONTEXT.font = "30px Arial";
+    CONTEXT.fillStyle = BLACK_INFO;
+    CONTEXT.font = THIRTY_PX_ARIAL;
     CONTEXT.fillText("Tiempo en el aire: " + this.airTime, 20, 50);
     CONTEXT.fillText("Distancia horizontal: " + this.maxXCoord, 20, 100);
     CONTEXT.fillText("Altura máxima: " + this.maxYCoord, 20, 150);
+  }
+
+  /* istanbul ignore next */
+  /**
+   * @description Function that draws the projectile path in the given canvas
+   *
+   * @param {*} CONTEXT - Canvas context
+   * @param {*} CANVAS - Canvas
+   * @memberof Path
+   */
+  draw(CONTEXT, CANVAS) {
+    let actualPoint = new PointOnPath(this.initialXCoord, this.initialYCoord);
+    do {
+
+    } while (actualPoint.xCoord > 0);
   }
 }
 

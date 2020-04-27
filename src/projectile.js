@@ -11,10 +11,13 @@
 "use strict";
 
 let PathOnProjectile;
+let AxesOnProjectile;
 if (typeof require !== 'undefined') { // Execution in node
   PathOnProjectile = require('./path.js').Path;
+  AxesOnProjectile = require('./axes.js').Axes;
 } else { // Execution in browser
   PathOnProjectile = Path;
+  AxesOnProjectile = Axes;
 }
 
 /**
@@ -44,9 +47,13 @@ function mainBrowser() {
     CANVAS2.width = (window.innerWidth - 100) / 2;
     CANVAS2.height = (window.innerHeight - 200) / 3;
 
-    const initialPath = new PathOnProjectile();
+    let initialPath = new PathOnProjectile();
     initialPath.calculateInfo();
     initialPath.printInfo(CONTEXT2, CANVAS2);
+
+    let coordinateAxes = new AxesOnProjectile(50, CANVAS1.height - 50,
+      initialPath.maxXCoord, initialPath.maxYCoord);
+    coordinateAxes.draw(CONTEXT1, CANVAS1);
   }
 }
 
