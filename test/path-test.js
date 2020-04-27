@@ -54,6 +54,10 @@ describe('Path Class', () => {
     it('Default inicialVelocity is 20', () => {
       expectOnPathTest(MY_PATH.inicialVelocity).to.be.equal(20);
     });
+
+    it('Default launchAngle is 60', () => {
+      expectOnPathTest(MY_PATH.launchAngle).to.be.equal(60);
+    });
   });
 
   describe('Non default property values', () => {
