@@ -24,9 +24,10 @@ class Axes {
    * @param {*} yCoord
    * @memberof Axes
    */
-  constructor(xCoord, yCoord) {
+  constructor(xCoord, yCoord, xLenght) {
     this.xCoord = xCoord;
     this.yCoord = yCoord;
+    this.xLenght = xLenght;
   }
 }
 
