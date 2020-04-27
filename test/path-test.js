@@ -63,6 +63,10 @@ describe('Path Class', () => {
     it('Default launchAngle is 60', () => {
       expectOnPathTest(MY_PATH.launchAngle).to.be.equal(60);
     });
+
+    it('Default drawPath is true', () => {
+      expectOnPathTest(MY_PATH.drawPath).to.be.equal(true);
+    });
   });
 
   describe('Non default property values', () => {
