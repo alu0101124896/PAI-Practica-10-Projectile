@@ -20,14 +20,20 @@ class Path {
   /**
    * @description Constructor that creates an instance of a path.
    *
+   * @param {number} [inicialXCoord=0]
+   * @param {number} [inicialYCoord=0]
+   * @param {number} [inicialVelocity=20]
+   * @param {number} [launchAngle=60]
+   * @param {boolean} [drawPath=true]
    * @memberof Path
    */
   constructor(inicialXCoord = 0, inicialYCoord = 0, inicialVelocity = 20,
-    launchAngle = 60) {
+    launchAngle = 60, drawPath = true) {
     this.inicialXCoord = inicialXCoord;
     this.inicialYCoord = inicialYCoord;
     this.inicialVelocity = inicialVelocity;
     this.launchAngle = launchAngle;
+    this.drawPath = drawPath;
   }
 }
 
