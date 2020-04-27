@@ -22,9 +22,10 @@ class Path {
    *
    * @memberof Path
    */
-  constructor(iniXCoord = 0, iniYCoord = 0) {
+  constructor(iniXCoord = 0, iniYCoord = 0, iniVelocity = 20) {
     this.iniXCoord = iniXCoord;
     this.iniYCoord = iniYCoord;
+    this.iniVelocity = iniVelocity;
   }
 }
 
