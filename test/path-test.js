@@ -22,5 +22,10 @@ if (typeof require !== 'undefined') { // Execution in node
 describe('Path Class', () => {
   describe('Default properties', () => {
     const MY_PATH = new PathOnPathTest();
+
+    it('Path has a iniXCoord', () => {
+      expectOnPathTest(MY_PATH).to.have.property('iniXCoord');
+      expectOnPathTest(MY_PATH.iniXCoord).to.be.a('number');
+    });
   });
 });
