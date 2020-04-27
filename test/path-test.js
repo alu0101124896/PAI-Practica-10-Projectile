@@ -50,6 +50,10 @@ describe('Path Class', () => {
     it('Default inicialYCoord is 0', () => {
       expectOnPathTest(MY_PATH.inicialYCoord).to.be.equal(0);
     });
+
+    it('Default inicialVelocity is 20', () => {
+      expectOnPathTest(MY_PATH.inicialVelocity).to.be.equal(20);
+    });
   });
 
   describe('Non default property values', () => {
