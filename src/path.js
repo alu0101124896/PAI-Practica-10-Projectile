@@ -54,6 +54,7 @@ class Path {
       (2 * GRAVITY_FORCE)) / 1000;
   }
 
+  /* istanbul ignore next */
   /**
    * @description Function that prints the projectile info at the given canvas
    *
