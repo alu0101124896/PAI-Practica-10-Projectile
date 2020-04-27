@@ -32,5 +32,10 @@ describe('Axes Class', () => {
       expectOnAxesTest(MY_AXES).to.have.property('yCoord');
       expectOnAxesTest(MY_AXES.yCoord).to.be.a('number');
     });
+
+    it('Axes has an xLenght', () => {
+      expectOnAxesTest(MY_AXES).to.have.property('xLenght');
+      expectOnAxesTest(MY_AXES.xLenght).to.be.a('number');
+    });
   });
 });
