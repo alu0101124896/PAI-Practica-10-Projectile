@@ -33,6 +33,11 @@ describe('Path Class', () => {
       expectOnPathTest(MY_PATH.iniYCoord).to.be.a('number');
     });
 
+    it('Path has a iniVelocity', () => {
+      expectOnPathTest(MY_PATH).to.have.property('iniVelocity');
+      expectOnPathTest(MY_PATH.iniVelocity).to.be.a('number');
+    });
+
     it('Default iniXCoord is 0', () => {
       expectOnPathTest(MY_PATH.iniXCoord).to.be.equal(0);
     });
