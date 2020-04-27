@@ -20,22 +20,31 @@ if (typeof require !== 'undefined') { // Execution in node
 }
 
 describe('Axes Class', () => {
-  describe('Default properties', () => {
-    const MY_AXES = new AxesOnAxesTest(10, 50, 200);
+  describe('Properties', () => {
+    const MY_AXES = new AxesOnAxesTest(10, 50, 200, 100);
 
     it('Axes has an xCoord', () => {
       expectOnAxesTest(MY_AXES).to.have.property('xCoord');
       expectOnAxesTest(MY_AXES.xCoord).to.be.a('number');
+      expectOnAxesTest(MY_AXES.xCoord).to.be.equal(10);
     });
 
     it('Axes has an yCoord', () => {
       expectOnAxesTest(MY_AXES).to.have.property('yCoord');
       expectOnAxesTest(MY_AXES.yCoord).to.be.a('number');
+      expectOnAxesTest(MY_AXES.yCoord).to.be.equal(50);
     });
 
     it('Axes has an xLenght', () => {
       expectOnAxesTest(MY_AXES).to.have.property('xLenght');
       expectOnAxesTest(MY_AXES.xLenght).to.be.a('number');
+      expectOnAxesTest(MY_AXES.xLenght).to.be.equal(200);
+    });
+
+    it('Axes has an yLenght', () => {
+      expectOnAxesTest(MY_AXES).to.have.property('yLenght');
+      expectOnAxesTest(MY_AXES.yLenght).to.be.a('number');
+      expectOnAxesTest(MY_AXES.yLenght).to.be.equal(100);
     });
   });
 });
