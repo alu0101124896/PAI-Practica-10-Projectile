@@ -48,5 +48,9 @@ describe('Path Class', () => {
     it('Modifies default iniXCoord correctly', () => {
       expectOnPathTest(MY_PATH.iniXCoord).to.be.equal(5);
     });
+
+    it('Modifies default iniYCoord correctly', () => {
+      expectOnPathTest(MY_PATH.iniYCoord).to.be.equal(10);
+    });
   });
 });
