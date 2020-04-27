@@ -4,7 +4,7 @@
  * @since Spring 2020
  * @summary University of La Laguna
  * @summary Computer Science - Interactive Aplication Programing
- * @description This program implements the tests for the point class
+ * @description This program implements the tests for the Point class
  */
 
 "use strict";
