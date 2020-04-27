@@ -23,39 +23,44 @@ describe('Path Class', () => {
   describe('Default properties', () => {
     const MY_PATH = new PathOnPathTest();
 
-    it('Path has a iniXCoord', () => {
-      expectOnPathTest(MY_PATH).to.have.property('iniXCoord');
-      expectOnPathTest(MY_PATH.iniXCoord).to.be.a('number');
+    it('Path has an inicialXCoord', () => {
+      expectOnPathTest(MY_PATH).to.have.property('inicialXCoord');
+      expectOnPathTest(MY_PATH.inicialXCoord).to.be.a('number');
     });
 
-    it('Path has a iniYCoord', () => {
-      expectOnPathTest(MY_PATH).to.have.property('iniYCoord');
-      expectOnPathTest(MY_PATH.iniYCoord).to.be.a('number');
+    it('Path has an inicialYCoord', () => {
+      expectOnPathTest(MY_PATH).to.have.property('inicialYCoord');
+      expectOnPathTest(MY_PATH.inicialYCoord).to.be.a('number');
     });
 
-    it('Path has a iniVelocity', () => {
-      expectOnPathTest(MY_PATH).to.have.property('iniVelocity');
-      expectOnPathTest(MY_PATH.iniVelocity).to.be.a('number');
+    it('Path has an inicialVelocity', () => {
+      expectOnPathTest(MY_PATH).to.have.property('inicialVelocity');
+      expectOnPathTest(MY_PATH.inicialVelocity).to.be.a('number');
     });
 
-    it('Default iniXCoord is 0', () => {
-      expectOnPathTest(MY_PATH.iniXCoord).to.be.equal(0);
+    it('Path has a launchAngle', () => {
+      expectOnPathTest(MY_PATH).to.have.property('launchAngle');
+      expectOnPathTest(MY_PATH.launchAngle).to.be.a('number');
     });
 
-    it('Default iniYCoord is 0', () => {
-      expectOnPathTest(MY_PATH.iniYCoord).to.be.equal(0);
+    it('Default inicialXCoord is 0', () => {
+      expectOnPathTest(MY_PATH.inicialXCoord).to.be.equal(0);
+    });
+
+    it('Default inicialYCoord is 0', () => {
+      expectOnPathTest(MY_PATH.inicialYCoord).to.be.equal(0);
     });
   });
 
   describe('Non default property values', () => {
     const MY_PATH = new PathOnPathTest(5, 10);
 
-    it('Modifies default iniXCoord correctly', () => {
-      expectOnPathTest(MY_PATH.iniXCoord).to.be.equal(5);
+    it('Modifies default inicialXCoord correctly', () => {
+      expectOnPathTest(MY_PATH.inicialXCoord).to.be.equal(5);
     });
 
-    it('Modifies default iniYCoord correctly', () => {
-      expectOnPathTest(MY_PATH.iniYCoord).to.be.equal(10);
+    it('Modifies default inicialYCoord correctly', () => {
+      expectOnPathTest(MY_PATH.inicialYCoord).to.be.equal(10);
     });
   });
 
