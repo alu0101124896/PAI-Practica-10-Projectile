@@ -27,8 +27,32 @@ h2 {
 
 canvas {
   background: #e5ffcc;
-  margin: 0 auto;
   display: block;
+}
+
+.wrapper {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "a b"
+    "a c";
+}
+.item1 {
+  grid-area: a;
+  margin: 5px;
+  text-align: center;
+}
+.item2 {
+  grid-area: b;
+  margin: 5px;
+  text-align: center;
+}
+.item3 {
+  grid-area: c;
+  margin: auto;
+  text-align: left;
 }
 
 a {

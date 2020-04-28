@@ -19,34 +19,47 @@ if (typeof require !== 'undefined') { // Execution in node
   CircleOnMontecarloPi = Circle;
 }
 
-function startMontecarloPi(CONTEXT, CANVAS) {
-  let circle = new CircleOnMontecarloPi(CANVAS.width / 2, CANVAS.height / 2,
-    CANVAS.height / 2);
-  circle.draw(CONTEXT);
-  let iterations = 1000;
+const CANVAS1 = document.getElementById("canvas1");
+const CANVAS2 = document.getElementById("canvas2");
+const CONTEXT1 = CANVAS1.getContext("2d");
+const CONTEXT2 = CANVAS2.getContext("2d");
+CANVAS1.width = (window.innerWidth - 100) / 2;
+CANVAS1.height = (window.innerWidth - 100) / 2;
+CANVAS2.width = (window.innerWidth - 100) / 2;
+CANVAS2.height = (window.innerWidth - 100) / 4;
 
-    // while
-}
+class MontecarloPi {
+  constructor(){
+    this.drawCircle();
+    this.numOfPoints = 0;
+    this.numOfPointsInCircle = 0;
+    this.PIval = 0;
+  }
 
-/**
- * @description Function that starts the execution of the program in browser
- */
-function mainBrowser() {
-  const CANVAS = document.getElementById("canvas");
-  if (CANVAS.getContext) {
-    const CONTEXT = CANVAS.getContext("2d");
-    if (window.innerWidth < window.innerHeight) {
-      CANVAS.width = window.innerWidth - 175;
-      CANVAS.height = window.innerWidth - 175;
-    } else {
-      CANVAS.width = window.innerHeight - 175;
-      CANVAS.height = window.innerHeight - 175;
-    }
+  printInfo(CONTEXT, CANVAS) {
+    CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
+    CONTEXT.fillStyle = BLACK_INFO;
+    CONTEXT.font = THIRTY_PX_ARIAL;
+    CONTEXT.fillText("Numero de puntos: " + this.airTime, 20, 50);
+    CONTEXT.fillText("Distancia horizontal: " + this.maxXCoord, 20, 100);
+    CONTEXT.fillText("Altura máxima: " + this.maxYCoord, 20, 150);
+  }
 
-    startMontecarloPi(CONTEXT, CANVAS);
+  putPointMontecarloPi() {
+    const newPoint = new Point(Math.random() * CANVAS1.width,
+      Math.random() * CANVAS1.height);
+    newPoint.draw('green', CONTEXT1, CANVAS1);
+    printInfo(CONTEXT2, CANVAS2);
+  }
+
+  drawCircle() {
+    let circle = new CircleOnMontecarloPi(CANVAS1.width / 2, CANVAS1.height / 2,
+      CANVAS1.height / 2);
+    circle.draw(CONTEXT1);
   }
 }
 
-if (typeof require !== 'undefined') { // Execution in node
-  console.error("Error: this program can not be executed in Node.");
+/* istanbul ignore next */
+if (typeof exports !== 'undefined') { // Execution in node
+  exports.MontecarloPi = MontecarloPi;
 }
