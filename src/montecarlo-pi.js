@@ -162,7 +162,7 @@ class MontecarloPi {
   async animate() {
     while (this.animateFlag) {
       this.putRandomPoint();
-      await sleep(document.getElementById("speed").value);
+      await sleep(100/document.getElementById("speed").value);
     }
   }
 }
