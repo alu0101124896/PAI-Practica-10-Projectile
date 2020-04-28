@@ -10,8 +10,6 @@
 
 "use strict";
 
-cosnt BLACK_POINT = 'point';
-
 /**
  * @description Class representing a point
  *
@@ -40,7 +38,7 @@ class Point {
    * @param {*} CANVAS - Canvas
    * @memberof Point
    */
-  draw(CONTEXT, CANVAS) {
+  draw(color, CONTEXT, CANVAS) {
     CONTEXT.beginPath();
     CONTEXT.fillStyle = color;
     CONTEXT.ellipse(this.xCoord, this.yCoord, CANVAS.height / 100,

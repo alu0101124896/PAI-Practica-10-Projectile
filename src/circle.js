@@ -9,7 +9,7 @@
 
 "use strict";
 
-const BLACK_CIRCLE = 'black';
+const LINE_WIDTH = 3;
 
 /**
  * @description Class representing a circle
@@ -41,10 +41,11 @@ class Circle {
    */
   draw(CONTEXT) {
     CONTEXT.beginPath();
-    CONTEXT.strokeStyle = BLACK_CIRCLE;
+    CONTEXT.fillStyle =
+    CONTEXT.lineWidth = LINE_WIDTH;
     CONTEXT.ellipse(this.xCoord, this.yCoord, this.radius, this.radius, 0, 0,
       Math.PI * 2);
-    CONTEXT.stroke();
+    CONTEXT.fill();
   }
 }
 
