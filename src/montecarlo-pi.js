@@ -32,14 +32,14 @@ CANVAS1.height = (window.innerWidth - 100) / 2;
 CANVAS2.width = (window.innerWidth - 100) / 2;
 CANVAS2.height = (window.innerWidth - 100) / 4;
 
-// /**
-//  * @description Function that stops the execution the given amount of time
-//  *
-//  * @param {number} msToWait - Number of miniseconds to stop the execution
-//  */
-// function sleep(msToWait) {
-//   return new Promise(resolve => setTimeout(resolve, msToWait));
-// }
+/**
+ * @description Function that stops the execution the given amount of time
+ *
+ * @param {number} msToWait - Number of miniseconds to stop the execution
+ */
+function sleep(msToWait) {
+  return new Promise(resolve => setTimeout(resolve, msToWait));
+}
 
 /**
  * @description Class that calculates the value of pi
@@ -159,10 +159,10 @@ class MontecarloPi {
    *
    * @memberof MontecarloPi
    */
-  /*async*/ animate() {
+  async animate() {
     while (this.animateFlag) {
       this.putRandomPoint();
-      // await sleep(document.getElementById("speed").value);
+      await sleep(document.getElementById("speed").value);
     }
   }
 }
