@@ -38,6 +38,11 @@ CANVAS2.height = (window.innerWidth - 100) / 4;
  * @class MontecarloPi
  */
 class MontecarloPi {
+
+  /**
+   *@description function that ceates a instance of MontecarloPi
+   * @memberof MontecarloPi
+   */
   constructor() {
     this.drawCircle();
     this.numOfPoints = 0;
