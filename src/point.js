@@ -41,8 +41,8 @@ class Point {
   draw(color, CONTEXT, CANVAS) {
     CONTEXT.beginPath();
     CONTEXT.fillStyle = color;
-    CONTEXT.ellipse(this.xCoord, this.yCoord, CANVAS.height / 100,
-      CANVAS.height / 100, 0, 0, Math.PI * 2);
+    CONTEXT.ellipse(this.xCoord, this.yCoord, CANVAS.height / 500,
+      CANVAS.height / 500, 0, 0, Math.PI * 2);
     CONTEXT.fill();
   }
 }

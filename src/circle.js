@@ -42,11 +42,9 @@ class Circle {
    */
   draw(CONTEXT) {
     CONTEXT.beginPath();
-    CONTEXT.fillStyle = '#e5ffcd'
     CONTEXT.lineWidth = LINE_WIDTH;
     CONTEXT.ellipse(this.xCoord, this.yCoord, this.radius, this.radius, 0, 0,
       Math.PI * 2);
-    CONTEXT.fill();
     CONTEXT.stroke();
   }
 }

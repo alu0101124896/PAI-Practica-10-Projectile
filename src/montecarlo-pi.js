@@ -32,6 +32,15 @@ CANVAS1.height = (window.innerWidth - 100) / 2;
 CANVAS2.width = (window.innerWidth - 100) / 2;
 CANVAS2.height = (window.innerWidth - 100) / 4;
 
+// /**
+//  * @description Function that stops the execution the given amount of time
+//  *
+//  * @param {number} msToWait - Number of miniseconds to stop the execution
+//  */
+// function sleep(msToWait) {
+//   return new Promise(resolve => setTimeout(resolve, msToWait));
+// }
+
 /**
  * @description Class that calculates the value of pi
  *
@@ -40,14 +49,36 @@ CANVAS2.height = (window.innerWidth - 100) / 4;
 class MontecarloPi {
 
   /**
-   *@description function that ceates a instance of MontecarloPi
+   *@description Constructor that ceates a instance of MontecarloPi
    * @memberof MontecarloPi
    */
   constructor() {
-    this.drawCircle();
     this.numOfPoints = 0;
     this.numOfPointsInCircle = 0;
-    this.PIval = 0;
+    this.valOfPi = 0;
+    this.animateFlag = false;
+    this.centerPoint = new PointOnMontecarloPi(CANVAS1.width / 2,
+      CANVAS1.height / 2);
+    this.drawCircle();
+    this.printInfo();
+  }
+
+  /**
+   * @description Function that resets the canvas
+   *
+   * @memberof MontecarloPi
+   */
+  reset() {
+    CONTEXT1.clearRect(0, 0, CANVAS1.width, CANVAS1.height);
+    CONTEXT2.clearRect(0, 0, CANVAS2.width, CANVAS2.height);
+    this.numOfPoints = 0;
+    this.numOfPointsInCircle = 0;
+    this.valOfPi = 0;
+    this.animateFlag = false;
+    this.centerPoint = new PointOnMontecarloPi(CANVAS1.width / 2,
+      CANVAS1.height / 2);
+    this.drawCircle();
+    this.printInfo();
   }
 
   /**
@@ -62,46 +93,77 @@ class MontecarloPi {
     CONTEXT2.fillText("Numero de puntos: " + this.numOfPoints, 20, 50);
     CONTEXT2.fillText("Puntos en el circulo: " + this.numOfPointsInCircle, 20,
       100);
-    CONTEXT2.fillText("Estimacion de pi: " + this.PIval, 20, 150);
+    CONTEXT2.fillText("Estimacion de pi: " + this.valOfPi, 20, 150);
   }
 
   /**
-   * @description function that puts a point in canvas
+   * @description Function that puts a point in canvas
    *
    * @memberof MontecarloPi
    */
   putPointMontecarloPi() {
-    const newPoint = new Point(Math.random() * CANVAS1.width,
+    const actualPoint = new Point(Math.random() * CANVAS1.width,
       Math.random() * CANVAS1.height);
-    newPoint.draw('green', CONTEXT1, CANVAS1);
+    if (this.distanceBetweenPoints(actualPoint, this.centerPoint) <
+      CANVAS1.width / 2) {
+      actualPoint.draw('red', CONTEXT1, CANVAS1);
+      this.numOfPointsInCircle++;
+    } else {
+      actualPoint.draw('blue', CONTEXT1, CANVAS1);
+    }
     this.numOfPoints++;
-    this.numOfPointsInCircle++;
+    this.valOfPi = 4 * (this.numOfPointsInCircle / this.numOfPoints);
     this.printInfo();
   }
 
   /**
-   *@description function that draws a circle
+   * @description Function that calculates the distance between two given points
+   *
+   * @param {PointOnMontecarloPi} pointA - One point
+   * @param {PointOnMontecarloPi} pointB - Another point
+   * @returns {number} Returns the distance between the two given points
+   * @memberof MontecarloPi
+   */
+  distanceBetweenPoints(pointA, pointB) {
+    return Math.sqrt(Math.pow(pointB.xCoord - pointA.xCoord, 2) +
+      Math.pow(pointA.yCoord - pointB.yCoord, 2));
+  }
+
+  /**
+   * @description Function that generates points secuentialy
+   *
+   * @memberof MontecarloPi
+   */
+  /*async*/ animate() {
+    while (this.animateFlag) {
+      this.putPointMontecarloPi();
+      // await sleep(document.getElementById("speed").value);
+    }
+  }
+
+  /**
+   * @description Function that alternates the animation state
+   *
+   * @memberof MontecarloPi
+   */
+  animateControler() {
+    if (this.animateFlag) {
+      this.animateFlag = false;
+    } else {
+      this.animateFlag = true;
+      this.animate();
+    }
+  }
+
+  /**
+   * @description Function that draws a circle
    *
    * @memberof MontecarloPi
    */
   drawCircle() {
-    let circle = new CircleOnMontecarloPi(CANVAS1.width / 2, CANVAS1.height / 2,
-      CANVAS1.height / 2);
+    let circle = new CircleOnMontecarloPi(this.centerPoint.xCoord,
+      this.centerPoint.yCoord, CANVAS1.height / 2);
     circle.draw(CONTEXT1);
-  }
-
-  /**
-   * @description function that resets the canvas
-   *
-   * @memberof MontecarloPi
-   */
-  clearCanvas() {
-    CONTEXT1.clearRect(0, 0, CANVAS1.width, CANVAS1.height);
-    CONTEXT2.clearRect(0, 0, CANVAS2.width, CANVAS2.height);
-    this.drawCircle();
-    this.numOfPoints = 0;
-    this.numOfPointsInCircle = 0;
-    this.PIval = 0;
   }
 }
 

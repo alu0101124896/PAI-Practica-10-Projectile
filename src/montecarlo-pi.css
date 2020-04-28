@@ -51,7 +51,7 @@ canvas {
 }
 .item3 {
   grid-area: c;
-  margin: auto;
+  margin: 5px;
   text-align: left;
 }
 
