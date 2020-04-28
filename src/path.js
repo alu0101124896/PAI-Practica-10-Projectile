@@ -25,15 +25,15 @@ const BLACK_INFO = 'black';
 const THIRTY_PX_ARIAL = "30px Arial";
 const TIME_INTERVAL = 0.5;
 
-/* istanbul ignore next */
-/**
- * @description Function that stops the execution the given amount of time
- *
- * @param {number} msToWait - Number of miniseconds to stop the execution
- */
-function sleep(msToWait) {
-  return new Promise(resolve => setTimeout(resolve, msToWait));
-}
+// /* istanbul ignore next */
+// /**
+//  * @description Function that stops the execution the given amount of time
+//  *
+//  * @param {number} msToWait - Number of miniseconds to stop the execution
+//  */
+// function sleep(msToWait) {
+//   return new Promise(resolve => setTimeout(resolve, msToWait));
+// }
 
 
 /**
@@ -102,7 +102,7 @@ class Path {
    * @param {*} CANVAS - Canvas
    * @memberof Path
    */
-  async draw(CONTEXT, CANVAS) {
+  /*async*/ draw(CONTEXT, CANVAS) {
     let currentTime = 0;
     let currentXCoord = this.initialXCoord;
     let currentYCoord = this.initialYCoord;
@@ -116,7 +116,7 @@ class Path {
         Math.sin(this.launchAngle * Math.PI / 180) - GRAVITY_FORCE *
         Math.pow(currentTime, 2) / 2;
       currentPoint = new PointOnPath(currentXCoord, -currentYCoord);
-      await sleep(50);
+      // await sleep(50);
     } while (currentPoint.yCoord < 0);
   }
 }
