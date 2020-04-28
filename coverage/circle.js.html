@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for axes.js</title>
+    <title>Code coverage report for circle.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> axes.js</h1>
+        <h1><a href="index.html">All files</a> circle.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -114,18 +114,7 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,8 +127,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,20 +142,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,72 +172,61 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * @file axes.js
+ * @file circle.js
  * @author Sergio Tabares Hernández &lt;alu0101124896@ull.edu.es&gt;
  * @since Spring 2020
  * @summary University of La Laguna
  * @summary Computer Science - Interactive Aplication Programing
- * @description This program implements a axes class for Projectile Motion.
- *  More info about it here: https://en.wikipedia.org/wiki/Projectile_motion
+ * @description This program implements a circle class for Montecarlo method.
+ * More info about it here: https://en.wikipedia.org/wiki/Monte_Carlo_method
  */
 &nbsp;
 "use strict";
 &nbsp;
-const BLACK_AXES = 'black';
-const LINE_WIDTH = 5;
-const ROUNDED = 'round';
+const LINE_WIDTH = 3;
 &nbsp;
 /**
- * @description Class representing a axes
+ * @description Class representing a circle
  *
- * @class Axes
+ * @class Circle
  */
-class Axes {
+class Circle {
 &nbsp;
   /**
-   * @description Constructor that creates an instance of a axes.
+   * @description Constructor that creates an instance of a circle.
    *
-   * @param {number} xCoord
-   * @param {number} yCoord
-   * @memberof Axes
+   * @param {number} [xCoord=0] - X coordinate of the circle
+   * @param {number} [yCoord=0] - Y coordinate of the circle
+   * @param {number} [radius=10] - Radius of the circle
+   * @memberof Circle
    */
-  constructor(xCoord, yCoord) {
+  constructor(xCoord = 0, yCoord = 0, radius = 10) {
     this.xCoord = xCoord;
     this.yCoord = yCoord;
+    this.radius = radius;
   }
 &nbsp;
   /* istanbul ignore next */
   /**
-   * @description Function that draws the coordinate axes in the given canvas
+   * @description Function that draws the circle
    *
    * @param {*} CONTEXT - Canvas context
-   * @param {*} CANVAS - Canvas
-   * @memberof Axes
+   * @memberof Circle
    */
-  draw(CONTEXT, CANVAS) {
-    CONTEXT.translate(this.xCoord, this.yCoord);
-&nbsp;
+  draw(CONTEXT) {
     CONTEXT.beginPath();
-    CONTEXT.strokeStyle = BLACK_AXES;
+    CONTEXT.fillStyle = '#e5ffcd'
     CONTEXT.lineWidth = LINE_WIDTH;
-    CONTEXT.lineCap = ROUNDED;
-    CONTEXT.moveTo(-this.xCoord / 4, 0);
-    CONTEXT.lineTo(CANVAS.width - this.xCoord * 2, 0);
-    CONTEXT.stroke();
-&nbsp;
-    CONTEXT.beginPath();
-    CONTEXT.strokeStyle = BLACK_AXES;
-    CONTEXT.lineWidth = LINE_WIDTH;
-    CONTEXT.lineCap = ROUNDED;
-    CONTEXT.moveTo(0, (CANVAS.height - this.yCoord) / 4);
-    CONTEXT.lineTo(0, CANVAS.height - this.yCoord * 2);
+    CONTEXT.ellipse(this.xCoord, this.yCoord, this.radius, this.radius, 0, 0,
+      Math.PI * 2);
+    CONTEXT.fill();
     CONTEXT.stroke();
   }
 }
 &nbsp;
 /* istanbul ignore next */
 if (typeof exports !== 'undefined') { // Execution in node
-  exports.Axes = Axes;
+  exports.Circle = Circle;
 }
 &nbsp;</pre></td></tr></table></pre>
 
