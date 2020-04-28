@@ -4,8 +4,8 @@
  * @since Spring 2020
  * @summary University of La Laguna
  * @summary Computer Science - Interactive Aplication Programing
- * @description This program implements a point class for Projectile Motion.
- *  More info about it here: https://en.wikipedia.org/wiki/Projectile_motion
+ * @description This program implements a point class for Montecarlo method.
+ * More info about it here: https://en.wikipedia.org/wiki/Monte_Carlo_method
  */
 
 "use strict";
