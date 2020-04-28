@@ -32,6 +32,11 @@ CANVAS1.height = (window.innerWidth - 100) / 2;
 CANVAS2.width = (window.innerWidth - 100) / 2;
 CANVAS2.height = (window.innerWidth - 100) / 4;
 
+/**
+ * @description Class that calculates the value of pi
+ *
+ * @class MontecarloPi
+ */
 class MontecarloPi {
   constructor() {
     this.drawCircle();
