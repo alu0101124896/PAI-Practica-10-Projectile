@@ -55,7 +55,7 @@ class MontecarloPi {
   constructor() {
     this.numOfPoints = 0;
     this.numOfPointsInCircle = 0;
-    this.valOfPi = 0;
+    this.valueOfPi = 0;
     this.animateFlag = false;
     this.centerPoint = new PointOnMontecarloPi(CANVAS1.width / 2,
       CANVAS1.height / 2);
@@ -73,12 +73,23 @@ class MontecarloPi {
     CONTEXT2.clearRect(0, 0, CANVAS2.width, CANVAS2.height);
     this.numOfPoints = 0;
     this.numOfPointsInCircle = 0;
-    this.valOfPi = 0;
+    this.valueOfPi = 0;
     this.animateFlag = false;
     this.centerPoint = new PointOnMontecarloPi(CANVAS1.width / 2,
       CANVAS1.height / 2);
     this.drawCircle();
     this.printInfo();
+  }
+
+  /**
+   * @description Function that draws a circle
+   *
+   * @memberof MontecarloPi
+   */
+  drawCircle() {
+    let circle = new CircleOnMontecarloPi(this.centerPoint.xCoord,
+      this.centerPoint.yCoord, CANVAS1.height / 2);
+    circle.draw(CONTEXT1);
   }
 
   /**
@@ -93,7 +104,7 @@ class MontecarloPi {
     CONTEXT2.fillText("Numero de puntos: " + this.numOfPoints, 20, 50);
     CONTEXT2.fillText("Puntos en el circulo: " + this.numOfPointsInCircle, 20,
       100);
-    CONTEXT2.fillText("Estimacion de pi: " + this.valOfPi, 20, 150);
+    CONTEXT2.fillText("Estimacion de pi: " + this.valueOfPi, 20, 150);
   }
 
   /**
@@ -101,7 +112,7 @@ class MontecarloPi {
    *
    * @memberof MontecarloPi
    */
-  putPointMontecarloPi() {
+  putRandomPoint() {
     const actualPoint = new Point(Math.random() * CANVAS1.width,
       Math.random() * CANVAS1.height);
     if (this.distanceBetweenPoints(actualPoint, this.centerPoint) <
@@ -112,7 +123,7 @@ class MontecarloPi {
       actualPoint.draw('blue', CONTEXT1, CANVAS1);
     }
     this.numOfPoints++;
-    this.valOfPi = 4 * (this.numOfPointsInCircle / this.numOfPoints);
+    this.valueOfPi = 4 * (this.numOfPointsInCircle / this.numOfPoints);
     this.printInfo();
   }
 
@@ -130,18 +141,6 @@ class MontecarloPi {
   }
 
   /**
-   * @description Function that generates points secuentialy
-   *
-   * @memberof MontecarloPi
-   */
-  /*async*/ animate() {
-    while (this.animateFlag) {
-      this.putPointMontecarloPi();
-      // await sleep(document.getElementById("speed").value);
-    }
-  }
-
-  /**
    * @description Function that alternates the animation state
    *
    * @memberof MontecarloPi
@@ -156,14 +155,15 @@ class MontecarloPi {
   }
 
   /**
-   * @description Function that draws a circle
+   * @description Function that generates points secuentialy
    *
    * @memberof MontecarloPi
    */
-  drawCircle() {
-    let circle = new CircleOnMontecarloPi(this.centerPoint.xCoord,
-      this.centerPoint.yCoord, CANVAS1.height / 2);
-    circle.draw(CONTEXT1);
+  /*async*/ animate() {
+    while (this.animateFlag) {
+      this.putRandomPoint();
+      // await sleep(document.getElementById("speed").value);
+    }
   }
 }
 
